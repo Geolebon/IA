@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><link rel="icon" href="a.png" type="image"></title>
+  <link rel="icon" href="a.png" type="image">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/stock.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Bienvenue dans le monde de trading</h1>
+  <p><img src="a.png" class="img-rounded" alt="Cinque Terre" width="15%" height="10%"></p> 
+</div>
+<div class="row">
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" class="text-center" href="#" >Bienvenue</a>
+    </div>
+    
+  </div>
+</nav>
+    <div class="col-sm-8">Voici votre prédiction de graphe
+      <div id="container"></div>
+	<script>
+		Highcharts.stockChart('container', {
+			rangeSelector: {
+				selected: 4
+			},
+      
+			xAxis: {
+				min: Date.UTC(new Date().getFullYear(), 0, 1),
+				max: Date.UTC(new Date().getFullYear(), 11, 31)
+			},
+			series: [{
+				type: 'candlestick',
+				name: 'AAPL',
+				data: [
+					[Date.UTC(2022, 0, 3), 184.73, 187.28, 183.56, 186.12],
+					[Date.UTC(2022, 0, 4), 184.31, 187.05, 183.50, 182.44],
+					[Date.UTC(2022, 0, 5), 180.76, 183.72, 179.92, 180.97],
+					[Date.UTC(2022, 0, 6), 178.97, 180.86, 176.97, 178.91],
+					[Date.UTC(2022, 0, 7), 175.80, 178.64, 173.50, 176.54],
+					[Date.UTC(2022, 0, 10), 178.93, 180.50, 176.93, 179.75],
+					[Date.UTC(2022, 0, 11), 182.64, 184.06, 182.41, 183.16],
+          // Données pour le reste de l'année...
+				],
+			}]
+		});
+	</script>
+
+    </div>
+    <div class="col-sm-4">
+
+
+        <input type="button" class="btn btn-success" value="Acheter" >
+        <input type="button" class="btn btn-danger" value="Vendre">
+        <div class="form-group">
+    <p><p>
+    
+    <label for="prix">Prix:
+    <input type="number" class="text-nowrap" placeholder="Prix" id="pr">
+  </div>
+
+</label>
+
+  <div class="form-group">
+    <th><label for="pre">Prediction:</th>
+    <th><input type="number" class="text-nowrap" placeholder="Prediction" id="pr"></th>
+  </div>
+</label>
+
+<label for="cf">Confidence:
+    <input type="number" class="text-nowrap" placeholder="confidence" id="cf">
+  </div>
+</label>
+
+</p>
+</p>
+ 
+
+
+
+    </div>
+  </div>
+  
+  
+
+</div>
+
+</body>
+</html>
